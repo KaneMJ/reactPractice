@@ -10,8 +10,12 @@ class StorePicker extends React.Component {
     myInput = React.createRef();
 
     goToStore(event) {
+        // Stop form from submitting
         event.preventDefault();
-        console.log(this.myInput.value.value);
+        // Grab the text from the input using the ref we created above
+        const storeName = this.myInput.value.value;
+        // Change the page to the store entered
+        this.props.history.push(`/store/${storeName}`);
     }
 
     render() {
