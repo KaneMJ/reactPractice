@@ -18,9 +18,11 @@ class App extends React.Component {
         this.setState({
             fishes: fishes
         });
-
-
-        console.log("Adding a fish!");
+       console.log("Adding a fish!");
+    };
+    
+    loadSampleFishes = () => {
+        alert("This is an alert in the loadSampleFishes");
     };
     render() {
         return (
@@ -29,7 +31,10 @@ class App extends React.Component {
                     <Header tagline="I mean Matt is cool" age={500} cool={true}/>
                 </div>
                 <Order />
-                <Inventory addFish={this.addFish} />
+                <Inventory 
+                    addFish={this.addFish}
+                    loadSampleFishes={this.loadSampleFishes}
+                />
             </div>
         );
     }
